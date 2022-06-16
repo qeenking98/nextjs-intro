@@ -2,8 +2,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Seo from "../components/Seo";
 
-const API_KEY = "10923b261ba94d897ac6b81148314a3f";
-
 export default function Home({ results }) {
   const router = useRouter();
   const onClick = (id, title) => {
@@ -20,9 +18,7 @@ export default function Home({ results }) {
           key={movie.id}>
           <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
           <h4>
-            <Link href={`/movies/${movie.id}`}>
-              <a>{movie.original_title}</a>
-            </Link>
+            <a>{movie.original_title}</a>
           </h4>
         </div>
       ))}
